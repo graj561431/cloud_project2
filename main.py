@@ -6,10 +6,8 @@ import google.generativeai as genai
 from flask import Flask, request, redirect, render_template, send_file
 from google.cloud import storage
 
+genai.configure(api_key=os.environ['GEMINI_API'])
 
-#genai.configure(api_key=os.environ['GEMINI_API'])
-
-genai.configure(api_key="AIzaSyAMNdLCg3c-Zz5ECC8HL-oj1Scqz62Csto")
 BUCKET_NAME = "my-bucket-for-project"
 
 app = Flask(__name__)
