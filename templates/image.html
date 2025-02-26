@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title if title else 'Untitled' }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="image-container">
+    <h2>{{ title if title else 'Untitled' }}</h2>
+    <img src="/view/{{ filename }}" alt="{{ filename }}">
+    <p>{{ filename }}</p>
+    <p><strong>Description:</strong> {{ description if description else 'No Description Available' }}</p>
+    <a href="/">Back</a>
+</div>
+
+</body>
+</html>

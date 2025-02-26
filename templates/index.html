@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Upload an Image</h2>
+<form method="post" enctype="multipart/form-data" action="/upload">
+    <input type="file" name="form_file" accept="image/jpeg">
+    <button type="submit">Upload</button>
+</form>
+
+<h2>Uploaded Images</h2>
+<div class="image-grid">
+    {% for file in files %}
+        <a href="/files/{{ file }}">
+            <img src="/view/{{ file }}" alt="{{ file }}">
+        </a>
+    {% endfor %}
+</div>
+
+</body>
+</html>
